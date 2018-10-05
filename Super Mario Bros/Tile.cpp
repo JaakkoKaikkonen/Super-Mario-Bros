@@ -15,7 +15,7 @@ namespace engine {
 		_data->window.draw(_tile);
 	}
 
-	void Tile::update(std::vector<Item*>& items, std::vector<Tile*>& tiles, Mario& mario) {
+	void Tile::update(std::vector<Item*>& items, Mario& mario) {
 
 	}
 

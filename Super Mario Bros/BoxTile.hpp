@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <array>
 #include <vector>
 #include "DEFINITIONS.hpp"
@@ -16,10 +17,10 @@ namespace engine {
 	{
 	public:
 		BoxTile() = default;
-		BoxTile(const int& x, const int& y, Items item, gameDataRef data);
+		BoxTile(const int& x, const int& y, Items item, Setting setting, int& coins, std::vector<Score>& scores, gameDataRef data);
 
 		void draw();
-		void update(std::vector<Item*>& items, std::vector<Tile*>& tiles, Mario& mario);
+		void update(std::vector<Item*>& items, Mario& mario);
 		void animate(const float& dt);
 		sf::Sprite& getTile();
 
@@ -45,6 +46,11 @@ namespace engine {
 		float _animationSpeedY = -300;
 
 		float _tileY = 0;
+
+		int& _coins;
+
+		std::vector<Score>& _scores;
+
 	};
 
 

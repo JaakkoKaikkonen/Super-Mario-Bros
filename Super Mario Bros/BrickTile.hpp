@@ -6,6 +6,7 @@
 #include "Game.hpp"
 #include "Tile.hpp"
 #include "Item.hpp"
+#include "Score.hpp"
 
 namespace engine {
 
@@ -13,10 +14,10 @@ namespace engine {
 	{
 	public:
 		BrickTile() = default;
-		BrickTile(const int& x, const int& y, Items item, gameDataRef data);
+		BrickTile(const int& x, const int& y, Items item, Setting setting, int& coins, std::vector<Score>& scores, gameDataRef data);
 
 		void draw();
-		void update(std::vector<Item*>& items, std::vector<Tile*>& tiles, Mario& mario);
+		void update(std::vector<Item*>& items, Mario& mario);
 		void animate(const float& dt);
 		sf::Sprite& getTile();
 
@@ -29,7 +30,9 @@ namespace engine {
 
 		sf::Clock _clock;
 
-		std::array<sf::IntRect, 2> _particleAnimationFrames = { BRICK_PARTICLE1, BRICK_PARTICLE2 };
+		sf::Clock _clock2;
+
+		std::array<sf::IntRect, 2> _particleAnimationFrames = { };
 
 		char _particleAnimationIterator = 0;
 
@@ -56,6 +59,11 @@ namespace engine {
 		bool _explode = false;
 
 		bool _destroyed = false;
+
+		int& _coins;
+
+		std::vector<Score>& _scores;
+
 	};
 
 }

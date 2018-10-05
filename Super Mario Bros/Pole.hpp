@@ -29,7 +29,7 @@ namespace engine {
 
 		float _scale = 4.0f;
 
-		float _flagSpeed = 240.0f;
+		float _flagSpeed = 300.0f;
 
 	};
 

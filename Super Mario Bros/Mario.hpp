@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "Game.hpp"
 #include "DEFINITIONS.hpp"
 #include <array>
@@ -15,19 +16,22 @@ namespace engine {
 		void updateX(const float& dt);
 		void updateY(const float& dt);
 
+		void checkCameraCollision();
+
 		void move(const float& speed);
 
-		void jump();
+		void jump(const float speed);
 
 		void animate(const float& dt);
 
-		void updateView(const float& dt);
+		void updateCamera(const float& dt);
+
+		void reset();
 
 		void applyGravity();
 
 		void draw();
 
-		
 
 	public:
 		sf::Sprite mario;
@@ -36,13 +40,15 @@ namespace engine {
 		sf::Vector2f velocity;
 		sf::Vector2f acceleration;
 
-		enum Dir { Right, Left };
-
-		Dir dir = Right;
+		Dir dir = Dir::Right;
 
 		sf::View camera;
 
 		bool bigMario = false;
+
+		bool fireForm = false;
+
+		bool throwFireBall = false;
 
 		float cameraX = 0;
 
@@ -52,7 +58,7 @@ namespace engine {
 
 		float hitBoxScale = 0.75f;
 
-		bool isCollidingY;
+		bool isCollidingY = true;
 
 		bool growingAnimation = false;
 
@@ -66,7 +72,15 @@ namespace engine {
 
 		bool insideCastle = false;
 
+		bool takeDamage = false;
+
+		bool dead = false;
+
 		bool dontStandUp = false;
+
+		bool down = false;
+
+		bool up = false;
 
 		float marioScaleX = 4.2f;
 
@@ -81,7 +95,17 @@ namespace engine {
 
 		unsigned short int _growingAnimationIterator = 0;
 
+		short int _shrinkingAnimationIterator = 18;
+
+		std::array<float, 19> _shrinkingAnimationPositions = { _smallMarioHeight, 0.0f,  0.0f, -_smallMarioHeight,  _smallMarioHeight, 0.0f, 0.0f, -_smallMarioHeight,  _smallMarioHeight, 0.0f,   0.0f, 0.0f,  0.0f, -_smallMarioHeight, _smallMarioHeight , 0.0f, 0.0f , 0.0f ,0.0f };
+
 		std::array<float, 10> _growingAnimationPositions = { 0.0f, -_smallMarioHeight, _smallMarioHeight, -_smallMarioHeight, _smallMarioHeight, -_smallMarioHeight, 0.0f, _smallMarioHeight, -_smallMarioHeight, 0.0f};
+
+		std::array<sf::IntRect, 19> _shrinkingRightAnimatinFrames = { SMALL_MARIO_IDLE_RIGHT , EMPTY, SMALL_BIG_MARIO_RIGHT, EMPTY, SMALL_MARIO_IDLE_RIGHT, EMPTY,  SMALL_BIG_MARIO_RIGHT, EMPTY, SMALL_MARIO_IDLE_RIGHT, EMPTY,
+																	SMALL_BIG_MARIO_RIGHT, EMPTY, BIG_MARIO_IDLE_RIGHT, EMPTY, SMALL_MARIO_IDLE_RIGHT, EMPTY, SMALL_BIG_MARIO_RIGHT, EMPTY, BIG_MARIO_IDLE_RIGHT };
+
+		std::array<sf::IntRect, 19> _shrinkingLeftAnimatinFrames = { SMALL_MARIO_IDLE_LEFT , EMPTY ,  SMALL_BIG_MARIO_LEFT, EMPTY, SMALL_MARIO_IDLE_LEFT, EMPTY, SMALL_BIG_MARIO_LEFT, EMPTY, SMALL_MARIO_IDLE_LEFT, EMPTY,
+																	SMALL_BIG_MARIO_LEFT, EMPTY, BIG_MARIO_IDLE_LEFT, EMPTY, SMALL_MARIO_IDLE_LEFT, EMPTY, SMALL_BIG_MARIO_LEFT, EMPTY, BIG_MARIO_IDLE_LEFT };
 
 		std::array<sf::IntRect, 10> _growingRightAnimatinFrames = { SMALL_MARIO_IDLE_RIGHT , SMALL_BIG_MARIO_RIGHT, SMALL_MARIO_IDLE_RIGHT, SMALL_BIG_MARIO_RIGHT, SMALL_MARIO_IDLE_RIGHT,
 																	SMALL_BIG_MARIO_RIGHT, BIG_MARIO_IDLE_RIGHT, SMALL_MARIO_IDLE_RIGHT, SMALL_BIG_MARIO_RIGHT, BIG_MARIO_IDLE_RIGHT };
@@ -101,11 +125,21 @@ namespace engine {
 
 		std::array<sf::IntRect, 3> _bigMarioRunLeftAnimationFrames = { BIG_MARIO_RUN_LEFT_01 , BIG_MARIO_RUN_LEFT_02, BIG_MARIO_RUN_LEFT_03 };
 
+		std::array<sf::IntRect, 3> _fireMarioRunRightAnimationFrames = { FIRE_MARIO_RUN_RIGHT_01 , FIRE_MARIO_RUN_RIGHT_02, FIRE_MARIO_RUN_RIGHT_03 };
+
+		std::array<sf::IntRect, 3> _fireMarioRunLeftAnimationFrames = { FIRE_MARIO_RUN_LEFT_01 , FIRE_MARIO_RUN_LEFT_02, FIRE_MARIO_RUN_LEFT_03 };
+
+		std::array<sf::IntRect, 3> _fireMarioThrowRunRightAnimationFrames = { FIRE_MARIO_THROW_RIGHT01 , FIRE_MARIO_THROW_RIGHT02, FIRE_MARIO_THROW_RIGHT03 };
+
+		std::array<sf::IntRect, 3> _fireMarioThrowRunLeftAnimationFrames = { FIRE_MARIO_THROW_LEFT01 , FIRE_MARIO_THROW_LEFT02, FIRE_MARIO_THROW_LEFT03 };
+
 		unsigned short int _climbAnimationIterator = 0;
 
 		std::array<sf::IntRect, 2> _bigMarioClimbingAnimationFrames = { BIG_MARIO_CLIMB_POLE1, BIG_MARIO_CLIMB_POLE2 };
 
 		std::array<sf::IntRect, 2> _smallMarioClimbingAnimationFrames = { SMALL_MARIO_CLIMB_POLE1, SMALL_MARIO_CLIMB_POLE2 };
+
+		std::array<sf::IntRect, 2> _fireMarioClimbingAnimationFrames = { FIRE_MARIO_CLIMB_POLE1, FIRE_MARIO_CLIMB_POLE2 };
 
 		float _accumulator = 0.0f;
 

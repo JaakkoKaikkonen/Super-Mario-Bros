@@ -1,6 +1,8 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <vector>
+#include "Score.hpp"
 #include "Game.hpp"
 #include "Item.hpp"
 #include "CollisionGrid.hpp"
@@ -11,7 +13,7 @@ namespace engine {
 	class Mushroom : public Item
 	{
 	public:
-		Mushroom(const int x, const int y, gameDataRef data);
+		Mushroom(const int x, const int y, std::vector<Score>& scores, gameDataRef data);
 		
 		void draw();
 
@@ -40,6 +42,8 @@ namespace engine {
 		bool _animationDone;
 
 		bool _delete;
+
+		std::vector<Score>& _scores;
 
 	};
 

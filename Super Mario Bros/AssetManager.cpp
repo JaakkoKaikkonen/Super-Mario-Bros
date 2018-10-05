@@ -14,6 +14,7 @@ namespace engine {
 		return this->_textures.at(name);
 	}
 
+
 	void AssetManager::loadFont(std::string name, std::string fileName) {
 		sf::Font font;
 
@@ -25,5 +26,21 @@ namespace engine {
 	sf::Font& AssetManager::getFont(std::string name) {
 		return this->_fonts.at(name);
 	}
+
+
+	void AssetManager::loadSound(std::string name, std::string fileName) {
+		_soundBuffers[name] = sf::SoundBuffer();
+		_sounds[name] = sf::Sound();
+
+		if (_soundBuffers[name].loadFromFile(fileName)) {
+			_sounds[name].setBuffer(_soundBuffers[name]);
+		}
+	}
+
+	sf::Sound& AssetManager::getSound(std::string name) {
+		return this->_sounds.at(name);
+	}
+
+
 
 }

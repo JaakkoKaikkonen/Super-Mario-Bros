@@ -4,11 +4,12 @@
 
 namespace engine {
 
-	Coin::Coin(const int x, const int y, gameDataRef data)
-		: _data(data), _coin(_data->assets.getTexture("Items"), COIN_ITEM1), _startingY(y)
+	Coin::Coin(const int x, const int y, int& coins, std::vector<Score>& scores, gameDataRef data)
+		: _data(data), _coin(_data->assets.getTexture("Items"), COIN_ITEM1), _startingY(y), _scores(scores)
 	{
 		_coin.setScale(3.0f, 3.0f);
 		_coin.setPosition(x - _coin.getGlobalBounds().width / 2, y);
+		coins++;
 	}
 
 
@@ -17,7 +18,7 @@ namespace engine {
 	}
 
 	void Coin::animate() {
-		if (_clock.getElapsedTime().asSeconds() > COIN_ANIMATION_TIME / _coinAnimationFrames.size()) {
+		if (_clock.getElapsedTime().asSeconds() > COIN_ITEM_ANIMATION_TIME / _coinAnimationFrames.size()) {
 			if (_coinAnimationIterator < _coinAnimationFrames.size() - 1) {
 				_coinAnimationIterator++;
 			} else {
@@ -34,6 +35,7 @@ namespace engine {
 			_speed *= -1;
 			_turn = false;
 		} else if (_coin.getPosition().y > _startingY - _coin.getGlobalBounds().height && !_turn) {
+			_scores.emplace_back(Score(_coin.getPosition().x, _coin.getPosition().y, 200, _data));
 			_delete = true;
 		}
 	}

@@ -14,6 +14,7 @@ namespace engine {
 		sf::RenderWindow window;
 		AssetManager assets;
 		InputManager input;
+		sf::Music music;
 	};
 
 	typedef std::shared_ptr<GameData> gameDataRef;
@@ -25,6 +26,8 @@ namespace engine {
 
 	private:
 		sf::Clock _clock;
+
+		const float dt = 1.0f / 240.0f;
 
 		gameDataRef _data = std::make_shared<GameData>();
 

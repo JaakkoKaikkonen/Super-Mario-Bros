@@ -17,7 +17,7 @@ namespace engine {
 		Tile(const int& x, const int& y, const sf::IntRect& texture, gameDataRef data);
 
 		virtual void draw();
-		virtual void update(std::vector<Item*>& items, std::vector<Tile*>& tiles, Mario& mario);
+		virtual void update(std::vector<Item*>& items, Mario& mario);
 		virtual void animate(const float& dt);
 		virtual sf::Sprite& getTile();
 

@@ -2,9 +2,11 @@
 
 #include <SFML/Graphics.hpp>
 #include <array>
+#include <vector>
 #include "Game.hpp"
 #include "Item.hpp"
 #include "DEFINITIONS.hpp"
+#include "Score.hpp"
 #include "CollisionGrid.hpp"
 
 
@@ -14,7 +16,7 @@ namespace engine {
 	class Coin : public Item
 	{
 	public:
-		Coin(const int x, const int y, gameDataRef data);
+		Coin(const int x, const int y, int& coins, std::vector<Score>& scores, gameDataRef data);
 	
 		void draw();
 
@@ -45,6 +47,7 @@ namespace engine {
 
 		float _animationHeight = -200;
 
+		std::vector<Score>& _scores;
 
 	};
 

@@ -24,7 +24,7 @@ namespace engine {
 	}
 
 	bool Castle::insideCastle(Mario& mario) {
-		return mario.mario.getPosition().x > _castle.getPosition().x + TILE_SIZE * 1.9f;
+		return mario.mario.getPosition().x > _castle.getPosition().x + TILE_SIZE * 1.9f && mario.mario.getPosition().x < _castle.getPosition().x + _castle.getGlobalBounds().width;
 	}
 
 	void Castle::raiseFlag(const float& dt) {
