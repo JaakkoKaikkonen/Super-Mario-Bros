@@ -103,7 +103,6 @@ namespace engine {
 
 		_clock.restart();
 
-		//std::cout << _levelDecorations.size() << std::endl;
 
 	}
 
