@@ -3,13 +3,13 @@
 #include "GameState.hpp"
 #include "DEFINITIONS.hpp"
 #include "Collision.hpp"
-#include "functions.hpp"
+#include "LoadLevel.hpp"
 #include <iostream>
 
 sf::Color backgroundColor;
 
 
-namespace engine {
+namespace Game {
 
 	GameState::GameState(gameDataRef data)
 		: _data(data), _mario(_data), _pole(_data), _castle(_data), _HUD(_data)
@@ -20,6 +20,15 @@ namespace engine {
 
 	void GameState::init() {
 		std::cout << "Game state" << std::endl;
+
+		std::ifstream highScoreFile;
+		highScoreFile.open(HIGH_SCORE_FILEPATH);
+
+		if (highScoreFile.is_open()) {
+			highScoreFile >> _highScore;
+		} else {
+			std::cout << "Highscore file not found" << std::endl;
+		}
 
 		_pole.lowerFlag = false;
 		_mario.flagDown = false;
@@ -344,7 +353,7 @@ namespace engine {
 				}
 			}
 
-			if(iterator != -1) {
+			if (iterator != -1) {
 				if (iterator == 0) {
 					_mario.position.y = boxesCollidedWith[iterator]->getTile().getPosition().y + boxesCollidedWith[iterator]->getTile().getGlobalBounds().height;
 					boxesCollidedWith[iterator]->update(_items, _mario);
@@ -371,7 +380,7 @@ namespace engine {
 
 		for (int i = 0; i < _money.size(); i++) {
 			_money[i].animate();
-			_money[i].update(_mario, _coins);
+			_money[i].update(_mario, _coins, _score);
 			if (_money[i].shouldBeDeleted()) {
 				_money[i] = _money[_money.size() - 1];
 				_money.pop_back();
@@ -530,6 +539,16 @@ namespace engine {
 			_mario.insideCastle = true;
 			_castle.raiseFlag(dt);
 			if (_insideCastleCounter > 3.6f) {
+				if (_score > _highScore) {
+					_highScore = _score;
+					//Save highscore
+					std::ofstream highScoreFile(HIGH_SCORE_FILEPATH);
+					if (highScoreFile.is_open()) {
+						highScoreFile << _score;
+					} else {
+						std::cout << "Highscore file not found" << std::endl;
+					}
+				}
 				_level = Level02;
 				this->init();
 				return;

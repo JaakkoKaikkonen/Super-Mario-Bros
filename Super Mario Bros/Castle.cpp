@@ -1,7 +1,7 @@
 #include "Castle.hpp"
 #include "DEFINITIONS.hpp"
 
-namespace engine {
+namespace Game {
 
 	Castle::Castle(gameDataRef data)
 		: _data(data), _castle(_data->assets.getTexture("Castle")), _flag(_data->assets.getTexture("Items"))

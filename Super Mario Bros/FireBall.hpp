@@ -8,13 +8,12 @@
 #include <array>
 #include <vector>
 
-namespace engine {
+namespace Game {
 
 	class FireBall
 	{
 	public:
 		FireBall(const int x, const int y, Dir dir, gameDataRef data);
-		~FireBall();
 
 		void draw();
 		void update(const float& dt, std::vector<CollisionGrid>& collisionGrid, Mario& mario);

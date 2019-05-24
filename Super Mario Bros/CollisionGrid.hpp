@@ -4,21 +4,18 @@
 #include <vector>
 #include "Tile.hpp"
 
-namespace engine {
+namespace Game {
 
 	class CollisionGrid
 	{
 	public:
 		CollisionGrid(const int x, const int y, const int width, const int height);
 
-		~CollisionGrid();
-
 
 	public:
 		sf::FloatRect boundary;
 
 		std::vector<Tile*> tiles;
-
 
 	};
 

@@ -24,9 +24,6 @@
     <ClCompile Include="AssetManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InputManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -110,9 +107,6 @@
     <ClInclude Include="AssetManager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InputManager.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -126,9 +120,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Mario.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="functions.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tile.hpp">
@@ -195,6 +186,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Platform.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadLevel.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

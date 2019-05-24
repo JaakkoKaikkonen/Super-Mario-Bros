@@ -1,7 +1,7 @@
 #include "Pole.hpp"
 #include "DEFINITIONS.hpp"
 
-namespace engine {
+namespace Game {
 
 	Pole::Pole(gameDataRef data)
 		: _data(data), _flag(_data->assets.getTexture("Items"), POLE_FLAG)

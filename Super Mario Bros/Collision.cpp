@@ -1,6 +1,6 @@
 #include "Collision.hpp"
 
-namespace engine {
+namespace Game {
 
 	bool Collision::checkSpriteCollision(const sf::Sprite& sprite1, const sf::Sprite& sprite2) {
 	

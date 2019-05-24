@@ -2,7 +2,7 @@
 #include "Collision.hpp"
 #include <iostream>
 
-namespace engine {
+namespace Game {
 
 	Koopa::Koopa(const int x, const int y, Setting setting, std::vector<Score>& scores, gameDataRef data)
 		: _data(data), _koopa(_data->assets.getTexture("Enemies")), _name("Koopa"), _position(x, y - _scale * 8.0f), _velocity(-100.0f, 0.0f), _acceleration(0.0f, 0.0f), _scores(scores)

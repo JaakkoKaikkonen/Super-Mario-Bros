@@ -6,7 +6,7 @@
 #include <array>
 
 
-namespace engine {
+namespace Game {
 
 	class Money
 	{
@@ -15,7 +15,7 @@ namespace engine {
 
 		void animate();
 
-		void update(Mario& mario, int& coins);
+		void update(Mario& mario, int& coins, int& score);
 
 		void draw();
 

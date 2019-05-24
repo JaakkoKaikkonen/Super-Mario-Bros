@@ -9,13 +9,12 @@
 #include <array>
 #include <vector>
 
-namespace engine {
+namespace Game {
 
 	class FireFlower : public Item
 	{
 	public:
 		FireFlower(const int x, const int y, Setting setting, std::vector<Score>& scores, gameDataRef data);
-		~FireFlower();
 
 		void draw();
 

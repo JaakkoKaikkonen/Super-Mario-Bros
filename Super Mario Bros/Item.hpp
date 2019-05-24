@@ -3,7 +3,7 @@
 #include <vector>
 #include "Mario.hpp"
 
-namespace engine {
+namespace Game {
 
 	class Item 
 	{

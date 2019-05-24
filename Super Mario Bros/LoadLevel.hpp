@@ -23,7 +23,7 @@
 #include "Platform.hpp"
 
 
-namespace engine {
+namespace Game {
 
 	int loadLevel(std::string filePath, std::vector<Tile*>& levelTiles, std::vector<Enemy*>& enemies, std::vector<Decoration>& levelDecorations, Mario& mario, std::vector<Money>& money, Pole& pole, Castle& castle, std::vector<Score>& scores,
 				int& coins, gameDataRef data) {

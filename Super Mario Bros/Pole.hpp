@@ -4,7 +4,7 @@
 #include <array>
 #include "Game.hpp"
 
-namespace engine {
+namespace Game {
 
 	class Pole
 	{

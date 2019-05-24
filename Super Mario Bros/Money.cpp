@@ -1,7 +1,7 @@
 #include "Money.hpp"
 #include "Collision.hpp"
 
-namespace engine {
+namespace Game {
 
 	Money::Money(const int x, const int y, Setting setting, gameDataRef data)
 		: _data(data), _money(_data->assets.getTexture("Items"), COIN01)
@@ -28,10 +28,11 @@ namespace engine {
 		}
 	}
 
-	void Money::update(Mario& mario, int& coins) {
+	void Money::update(Mario& mario, int& coins, int& score) {
 		if (Collision::checkSpriteCollision(_money, mario.mario)) {
 			_data->assets.getSound("Coin").play();
 			coins++;
+			score += 200;
 			_delete = true;
 		}
 	}

@@ -1,7 +1,7 @@
 #include "FireFlower.hpp"
 #include "Collision.hpp"
 
-namespace engine {
+namespace Game {
 
 	FireFlower::FireFlower(const int x, const int y, Setting setting, std::vector<Score>& scores, gameDataRef data)
 		: _data(data), _fireFlower(_data->assets.getTexture("Items")), _startY(y), _scores(scores)
@@ -21,10 +21,6 @@ namespace engine {
 
 	}
 
-
-	FireFlower::~FireFlower()
-	{
-	}
 
 	void FireFlower::draw() {
 		_data->window.draw(_fireFlower);

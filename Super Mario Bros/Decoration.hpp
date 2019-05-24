@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Game.hpp"
 
-namespace engine {
+namespace Game {
 
 
 	class Decoration

@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 
-namespace engine {
+namespace Game {
 
 	HUD::HUD(gameDataRef data)
 		: _data(data), _coin(_data->assets.getTexture("Items"), COIN01), _cross(_data->assets.getTexture("HUD"), HUD_CROSS), _marioSprite(_data->assets.getTexture("Mario"), SMALL_MARIO_IDLE_RIGHT)

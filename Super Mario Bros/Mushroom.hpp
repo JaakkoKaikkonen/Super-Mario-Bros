@@ -7,7 +7,7 @@
 #include "Item.hpp"
 #include "CollisionGrid.hpp"
 
-namespace engine {
+namespace Game {
 
 
 	class Mushroom : public Item

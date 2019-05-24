@@ -5,7 +5,7 @@
 #include "Mario.hpp"
 #include "CollisionGrid.hpp"
 
-namespace engine {
+namespace Game {
 
 	class Enemy {
 	public: 

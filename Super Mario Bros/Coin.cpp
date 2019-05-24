@@ -2,7 +2,7 @@
 #include "DEFINITIONS.hpp"
 #include "Tile.hpp"
 
-namespace engine {
+namespace Game {
 
 	Coin::Coin(const int x, const int y, int& coins, std::vector<Score>& scores, gameDataRef data)
 		: _data(data), _coin(_data->assets.getTexture("Items"), COIN_ITEM1), _startingY(y), _scores(scores)

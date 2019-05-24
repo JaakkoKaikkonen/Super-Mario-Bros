@@ -1,7 +1,7 @@
 #include "Platform.hpp"
 #include "Collision.hpp"
 
-namespace engine {
+namespace Game {
 
 	Platform::Platform(const int x, const int y, Mario& mario, gameDataRef data) 
 		: _data(data), _tile(_data->assets.getTexture("Tiles"), PLATFORM), _mario(mario)
