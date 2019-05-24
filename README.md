@@ -1,10 +1,11 @@
 # Super-Mario-Bros
 
-C++
+Made with C++ using SFML graphics library.
 
-SFML
+It has the 2 first levels of the original Super Mario Bros.
 
+Level 1
 ![alt text](https://github.com/JaakkoKaikkonen/Super-Mario-Bros/blob/master/Level1.gif)
 
-
+Level 2
 ![alt text](https://github.com/JaakkoKaikkonen/Super-Mario-Bros/blob/master/Level2.gif)
