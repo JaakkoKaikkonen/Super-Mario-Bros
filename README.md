@@ -1,4 +1,4 @@
-# Super-Mario-Bros
+# Super Mario Bros.
 
 Made with C++ using SFML graphics library.
 
