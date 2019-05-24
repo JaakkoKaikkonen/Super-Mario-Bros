@@ -5,7 +5,7 @@
 #include "FireFlower.hpp"
 #include <iostream>
 
-namespace engine {
+namespace Game {
 
 	BrickTile::BrickTile(const int& x, const int& y, Items item, Setting setting, int& coins, std::vector<Score>& scores, gameDataRef data)
 		: _data(data), _tile(_data->assets.getTexture("Tiles")), _rightParticlesVector(cos(-PI / 4), sin(-PI / 4)),

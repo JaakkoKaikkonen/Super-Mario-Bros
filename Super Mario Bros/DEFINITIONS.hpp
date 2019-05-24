@@ -43,6 +43,8 @@
 #define BACKGROUND_COLOR01 sf::Color(107, 140, 255)
 #define BACKGROUND_COLOR02 sf::Color(0, 0, 0)
 
+#define HIGH_SCORE_FILEPATH "Resources/HighScore.txt"
+
 
 extern sf::Color backgroundColor;
 

@@ -4,10 +4,11 @@
 #include "State.hpp"
 #include "Game.hpp"
 #include "GameState.hpp"
+#include <iostream>
 #include "DEFINITIONS.hpp"
 #include <array>
 
-namespace engine {
+namespace Game {
 
 	class MenuState : public State
 	{
@@ -28,17 +29,11 @@ namespace engine {
 
 		sf::Sprite _menuLogo;
 
-		sf::Sprite _menuCursor;
-
 		sf::Text _1PlayerGame;
 
-		sf::Text _2PlayerGame;
+		sf::Text _pressEnter;
 
 		sf::Text _topScore;
-
-		unsigned short int _cursorPosition = 0;
-
-		std::array<sf::Vector2f, 2> _cursorPositions = { };
 
 	};
 

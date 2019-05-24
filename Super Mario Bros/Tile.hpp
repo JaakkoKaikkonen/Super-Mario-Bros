@@ -6,7 +6,7 @@
 #include "Mario.hpp"
 #include <vector>
 
-namespace engine {
+namespace Game {
 
 
 	class Tile

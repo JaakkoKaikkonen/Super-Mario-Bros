@@ -2,7 +2,7 @@
 #include "DEFINITIONS.hpp"
 #include <string>
 
-namespace engine {
+namespace Game {
 
 	Decoration::Decoration(const int& x, const int& y, const std::string textureName, const sf::IntRect intRect, gameDataRef data)
 		: _data(data), _decoration(_data->assets.getTexture(textureName), intRect)

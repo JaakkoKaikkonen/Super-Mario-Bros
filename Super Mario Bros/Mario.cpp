@@ -1,7 +1,7 @@
 #include "Mario.hpp"
 #include <iostream>
 
-namespace engine {
+namespace Game {
 
 	Mario::Mario(gameDataRef data)
 		: position(0.0f, 0.0f), velocity(0.0f, 0.0f), acceleration(0.0f, 0.0f), _data(data), camera(sf::FloatRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))

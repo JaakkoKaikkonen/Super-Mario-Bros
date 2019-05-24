@@ -5,7 +5,7 @@
 #include "Score.hpp"
 #include <iostream>
 
-namespace engine {
+namespace Game {
 
 
 	BoxTile::BoxTile(const int& x, const int& y, Items item, Setting setting, int& coins, std::vector<Score>& scores, gameDataRef data)

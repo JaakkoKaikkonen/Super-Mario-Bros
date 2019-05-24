@@ -2,7 +2,7 @@
 #include "DEFINITIONS.hpp"
 #include "Collision.hpp"
 
-namespace engine {
+namespace Game {
 
 	Pipe::Pipe(const int& x, const int& y, const sf::IntRect& texture, Mario& mario, const bool isPortal, gameDataRef data)
 		: _data(data), _pipe(_data->assets.getTexture("Tiles"), texture), _isPortal(isPortal), _mario(mario)

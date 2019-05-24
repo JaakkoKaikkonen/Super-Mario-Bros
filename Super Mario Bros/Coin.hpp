@@ -10,7 +10,7 @@
 #include "CollisionGrid.hpp"
 
 
-namespace engine {
+namespace Game {
 
 
 	class Coin : public Item

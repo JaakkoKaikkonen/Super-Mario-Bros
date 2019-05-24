@@ -8,7 +8,7 @@
 #include <array>
 #include <string>
 
-namespace engine {
+namespace Game {
 
 	class Piranha : public Enemy
 	{

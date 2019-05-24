@@ -24,7 +24,7 @@
 #include "Score.hpp"
 
 
-namespace engine {
+namespace Game {
 
 	class GameState : public State
 	{
@@ -51,6 +51,8 @@ namespace engine {
 		HUD _HUD;
 
 		int _score = 0;
+
+		int _highScore = 0;
 
 		int _coins = 0;
 

@@ -5,7 +5,7 @@
 #include "Tile.hpp"
 #include "DEFINITIONS.hpp"
 
-namespace engine {
+namespace Game {
 
 	class Platform : public Tile
 	{

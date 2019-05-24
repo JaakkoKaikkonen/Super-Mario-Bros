@@ -1,7 +1,7 @@
 #include "Piranha.hpp"
 #include "Collision.hpp"
 
-namespace engine {
+namespace Game {
 
 	Piranha::Piranha(const int x, const int y, Setting setting, std::vector<Score>& scores, gameDataRef data)
 		: _data(data), _piranha(_data->assets.getTexture("Enemies")), _name("Piranha"), _startY(y + TILE_SIZE), _scores(scores)

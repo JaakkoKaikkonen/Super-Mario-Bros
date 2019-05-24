@@ -1,6 +1,6 @@
 #include "Score.hpp"
 
-namespace engine {
+namespace Game {
 
 	Score::Score(const int x, const int y, const int score, gameDataRef data)
 		: _data(data), _startY(y)
@@ -11,9 +11,6 @@ namespace engine {
 		_score.setPosition(x, y);
 	}
 
-	Score::~Score()
-	{
-	}
 
 	void Score::update(const float& dt) {
 		if (_score.getPosition().y > _startY - 120.0f) {

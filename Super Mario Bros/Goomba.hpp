@@ -8,7 +8,7 @@
 #include <vector>
 #include "Score.hpp"
 
-namespace engine {
+namespace Game {
 
 	class Goomba : public Enemy
 	{

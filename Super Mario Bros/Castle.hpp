@@ -4,7 +4,7 @@
 #include "Game.hpp"
 #include "Mario.hpp"
 
-namespace engine {
+namespace Game {
 
 	class Castle
 	{

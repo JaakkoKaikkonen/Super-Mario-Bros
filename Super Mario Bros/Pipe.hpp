@@ -5,7 +5,7 @@
 #include "Tile.hpp"
 #include "Mario.hpp"
 
-namespace engine {
+namespace Game {
 
 	class Pipe : public Tile
 	{

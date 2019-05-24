@@ -141,7 +141,6 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Goomba.cpp" />
     <ClCompile Include="HUD.cpp" />
-    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Koopa.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mario.cpp" />
@@ -169,12 +168,11 @@
     <ClInclude Include="Enemy.hpp" />
     <ClInclude Include="FireBall.hpp" />
     <ClInclude Include="FireFlower.hpp" />
-    <ClInclude Include="functions.hpp" />
+    <ClInclude Include="LoadLevel.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="GameState.hpp" />
     <ClInclude Include="Goomba.hpp" />
     <ClInclude Include="HUD.hpp" />
-    <ClInclude Include="InputManager.hpp" />
     <ClInclude Include="Item.hpp" />
     <ClInclude Include="Koopa.hpp" />
     <ClInclude Include="Mario.hpp" />

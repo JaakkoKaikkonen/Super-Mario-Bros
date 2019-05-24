@@ -3,7 +3,7 @@
 #include <iostream>
 
 
-namespace engine {
+namespace Game {
 
 	Goomba::Goomba(const int x, const int y, Setting setting, std::vector<Score>& scores, gameDataRef data)
 		: _data(data), _goomba(_data->assets.getTexture("Enemies")), _name("Goomba"), _position(x, y), _velocity(-90.0f, 0.0f), _acceleration(0.0f, 0.0f), _scores(scores)

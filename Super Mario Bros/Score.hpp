@@ -4,14 +4,13 @@
 #include "Game.hpp"
 #include "DEFINITIONS.hpp"
 
-namespace engine {
+namespace Game {
 
 
 	class Score
 	{
 	public:
 		Score(const int x, const int y, const int score, gameDataRef data);
-		~Score();
 
 		void update(const float& dt);
 

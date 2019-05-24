@@ -8,7 +8,7 @@
 #include "Item.hpp"
 #include "Score.hpp"
 
-namespace engine {
+namespace Game {
 
 	class BrickTile : public Tile
 	{

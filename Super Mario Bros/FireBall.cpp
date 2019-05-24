@@ -2,7 +2,7 @@
 #include "Collision.hpp"
 #include <iostream>
 
-namespace engine {
+namespace Game {
 
 	FireBall::FireBall(const int x, const int y, Dir dir, gameDataRef data)
 		: _data(data), _fireBall(_data->assets.getTexture("Items"), FIREBALL04), _position(0.0f, y), _velocity(0.0f, 0.0f)
@@ -16,11 +16,6 @@ namespace engine {
 			_velocity.x = -FIREBALL_SPEED;
 			_position.x = x;
 		}
-	}
-
-
-	FireBall::~FireBall()
-	{
 	}
 
 

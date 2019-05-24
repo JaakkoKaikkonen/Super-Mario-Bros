@@ -11,7 +11,7 @@
 #include "Coin.hpp"
 #include "Mushroom.hpp"
 
-namespace engine {
+namespace Game {
 
 	class BoxTile : public Tile
 	{

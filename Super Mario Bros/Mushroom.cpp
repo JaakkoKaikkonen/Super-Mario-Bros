@@ -4,7 +4,7 @@
 #include "Tile.hpp"
 #include <iostream>
 
-namespace engine {
+namespace Game {
 
 	Mushroom::Mushroom(const int x, const int y, std::vector<Score>& scores, gameDataRef data)
 		: _data(data), _mushroom(_data->assets.getTexture("Items"), MUSHROOM_ITEM), _velocity(200.0f, 0.0f), _acceleration(0.0f, 0.0f), _startY(y), _scores(scores)
@@ -20,7 +20,7 @@ namespace engine {
 	}
 
 	void Mushroom::animate() {
-		
+
 	}
 
 	void Mushroom::update(const float& dt, std::vector<CollisionGrid>& collisionGrid, Mario& mario) {

@@ -2,7 +2,7 @@
 #include "DEFINITIONS.hpp"
 #include <iostream>
 
-namespace engine {
+namespace Game {
 
 	Tile::Tile(const int& x, const int& y, const sf::IntRect& texture, gameDataRef data) 
 		: _data(data), _tile(_data->assets.getTexture("Tiles"), texture)

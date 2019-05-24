@@ -10,7 +10,7 @@
 #include <array>
 #include <vector>
 
-namespace engine {
+namespace Game {
 
 	class Koopa : public Enemy
 	{
