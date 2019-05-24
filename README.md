@@ -10,4 +10,4 @@ Level 1
 
 Level 2
 
-![Level 2.gif](https://github.com/JaakkoKaikkonen/Super-Mario-Bros/blob/master/Level2.gif)
+![Level 2.gif](https://github.com/JaakkoKaikkonen/Super-Mario-Bros/blob/master/Level2.gif "https://github.com/JaakkoKaikkonen/Super-Mario-Bros/blob/master/Level2.gif")
