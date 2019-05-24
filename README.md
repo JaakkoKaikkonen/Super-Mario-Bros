@@ -2,7 +2,7 @@
 
 Made with C++ using SFML graphics library.
 
-It has the 2 first levels of the original Super Mario Bros.
+It has the first 2 levels of the original Super Mario Bros.
 
 Level 1
 
